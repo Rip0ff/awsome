@@ -1,0 +1,22 @@
+div.object {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid black;
+    border-radius:  5px;
+    width: fit-content;
+    height:40px;
+    background-color: rgb(114, 114, 114);
+}
+
+p.icon {
+    background-color: rgb(92, 92, 92);
+    font-size: larger;
+    width: fit-content;
+    height: auto;
+    color: white;
+}
+
+button.delete {
+    height: fit-content;
+}
