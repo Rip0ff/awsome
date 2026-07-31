@@ -9,6 +9,11 @@ div.object {
     background-color: rgb(114, 114, 114);
 }
 
+div.body {
+    display: flex;
+    flex-direction: column;
+}
+
 p.icon {
     background-color: rgb(92, 92, 92);
     font-size: larger;
