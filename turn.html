@@ -4,14 +4,39 @@
         <link rel="stylesheet" href="style.css">
          <script src="work.js" defer></script>
     </head>
+
     <body>
-        <div class="body">
-            <div class="object">
-                <p class="icon">⋮⋮</p>
-                <p class="name">This is a test</p>
-                <button class="delete">Remove</button>
+        <header>
+            <div class="addChar">
+                <form class="addChar">
+                    <input type="text" class="input" placeholder="Enter a name">
+                    <button type="submit" class="add" onclick="addChar()">Add</button>
+                </form>
             </div>
-        </div>
-        <button onclick="test()">add</button>
+        </header>
+
+        <main id="main">
+            <div class="body">
+                <div class="object">
+                    <p class="icon">⋮⋮</p>
+                    <p class="name">This is a test</p>
+                    <button class="delete">Remove</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <form>
+                <div class="layout">
+                    <div class="scroll-container">
+                        <div class="item">
+                            <label for="name">Bob</label>
+                            <input id="name" type="number" min="-2" max="30" width="10px">
+                        </div>
+                    </div>
+                    <button type="submit" class="updateInit">Add rolls</button>
+                </div>
+            </form>
+        </footer>
     </body>
 </html>
