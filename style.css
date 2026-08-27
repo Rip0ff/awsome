@@ -17,19 +17,13 @@ div.object {
     width: fit-content;
     height:40px;
     background-color: #1b263b;
+    gap: 10px;
+    padding: 5px;
 }
 
 div.body {
     display: flex;
     flex-direction: column;
-}
-
-p.icon {
-    background-color: #324a5f;
-    font-size: larger;
-    width: fit-content;
-    height: auto;
-    color: #6b8ba4;
 }
 
 button.delete {

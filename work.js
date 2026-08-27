@@ -1,43 +1,31 @@
-const objects = document.querySelectorAll('div'); 
-
-
-/*
-<div class="body">
-    <div class="object">
-        <p class="icon">⋮⋮</p>
-        <p class="name">This is a test</p>
-        <button class="delete">Remove</button>
-    </div>
-</div>
-*/
-
-
-
-
-function addChar() {
-    const form = document.getElementById('addChar');
-
-    form.addEventListener('submit', (event) => {
-        event.preventDefault(); 
-
-        const formData = new FormData(event.target); 
-
-        const data = Object.fromEntries(formData.entries()); 
-
-        console.log(data); 
-
-    });
+function getData(form) {
+    var formData = new FormData(form);
+    var values = [];
+    for (var pair of formData.entries()) {
+        values.push(pair[1]);
+    }
+   return values
 }
-document.getElementById('addChar').addEventListener('submit', function(event) {
-  // 1. Stop the page from reloading
-  event.preventDefault(); 
-  
-  // 2. Gather the form data automatically
-  const formData = new FormData(event.target);
-  
-  // 3. Convert it to a clean JavaScript object for testing
-  const data = Object.fromEntries(formData.entries());
-  
-  // 4. Print it to the console to verify it works
-  console.log("Form submitted successfully!", data);
+
+function makeCap(str) {
+    return String(str).charAt(0).toUpperCase() + String(str).slice(1);
+}
+
+document.getElementById("char").addEventListener("submit", function (e) {
+    e.preventDefault();
+   
+    const text = getData(e.target)
+    if (text != ""){
+        const test = document.createElement("div");
+        const text2 = document.createElement("p");
+        const butt = document.createElement("button");
+        test.classList.add("object");
+        text2.classList.add("name");
+        butt.classList.add("remove");
+        text2.textContent = makeCap(text);
+        butt.textContent = "remove";
+        test.appendChild(text2);
+        test.appendChild(butt);
+        document.getElementById("body").append(test);
+    }
 });

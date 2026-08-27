@@ -8,18 +8,17 @@
     <body>
         <header>
             <div class="addChar">
-                <form class="addChar" action="turn.html" method="post">
-                    <input type="text" class="input" placeholder="Enter a name">
-                    <button type="submit" class="add" onclick="addChar()">Add</button>
+                <form id="char" action="" method="post">
+                    <input type="text" name="name" placeholder="Enter a name">
+                    <button type="submit" class="addChar">Add</button>
                 </form>
             </div>
         </header>
 
-        <main id="main">
-            <div class="body">
+        <main>
+            <div id="body">
                 <div class="object">
-                    <p class="icon">⋮⋮</p>
-                    <p class="name">This is a test</p>
+                    <p class="name">Bob</p>
                     <button class="delete">Remove</button>
                 </div>
             </div>
@@ -30,8 +29,7 @@
                 <div class="layout">
                     <div class="scroll-container">
                         <div class="item">
-                            <label for="name">Bob</label>
-                            <input id="name" type="number" min="-2" max="30" width="10px">
+                            <label>Bob<input name="name" type="number" min="-2" max="30" width="10px"></label>
                         </div>
                     </div>
                     <button type="submit" class="updateInit">Add rolls</button>
