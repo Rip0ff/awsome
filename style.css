@@ -1,18 +1,31 @@
-body {
-    background-color: #0d1b2a;
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
 }
 
-p {
+body {
+    background-color: #0d1b2a;
     color:#6b8ba4;
+    margin-top: 6%;
+    width: fit-content;
+    height: fit-content;
 }
-label { 
-    color:#6b8ba4;
+
+footer {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
 }
-div.object {
+
+.object {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 1px solid black;
     border-radius:  5px;
     width: fit-content;
     height:40px;
@@ -21,33 +34,33 @@ div.object {
     padding: 5px;
 }
 
-div.body {
+#body {
     display: flex;
     flex-direction: column;
-}
-
-button.delete {
-    height: fit-content;
+    gap: 10px;
+    
 }
 
 .scroll-container {
-    display: block;
-    width: 85%;
+    width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
+    background-color: #1b263b;
     padding: 10px;
+}
+
+.scroll-item {
+    display: inline-block;
+    margin-right: 10px;
     background-color: #1b263b;
 }
+
 .layout {
     display: flex;
     flex-direction: row;
 }
-
-.header {
-    width: 100%;
-}
-div.addChar {
+.addChar {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -55,8 +68,4 @@ div.addChar {
     width: 100%;
     height: 50px;
     background-color: #1b263b;
-}
-
-.updateInit {
-    width: 15%;
 }
