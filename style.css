@@ -56,7 +56,7 @@ footer {
     background-color: #1b263b;
 }
 
-.layout {
+#layout {
     display: flex;
     flex-direction: row;
 }
