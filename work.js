@@ -102,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const foot = document.getElementById("foot");
         const items = foot.children;
         for (var item of items) {
-            console.log(item.children[0].children[0].value)
             if (item.firstChild == null) break;
             item.children[0].children[0].value = NaN;
             
