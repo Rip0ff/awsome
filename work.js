@@ -1,7 +1,5 @@
 var id = 1
 
-
-
 function getData(form) {
     var formData = new FormData(form);
     var values = [];
@@ -101,12 +99,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const up = document.getElementById(roll[0]);
             up.setAttribute("roll", roll[1]);
         }
-        const lay = document.getElementById("layout");
-        const items = lay.children;
+        const foot = document.getElementById("foot");
+        const items = foot.children;
         for (var item of items) {
+            console.log(item.children[0].children[0].value)
             if (item.firstChild == null) break;
-            var sub = item.children[0].children[0].children[0];
-            sub.value = NaN;
+            item.children[0].children[0].value = NaN;
+            
         }
         console.log(items)
         orderRolls()
