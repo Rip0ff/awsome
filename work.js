@@ -1,14 +1,5 @@
 var id = 1
 
-// Build the expiration date string:
-var expiration_date = new Date();
-var cookie_string = '';
-expiration_date.setFullYear(expiration_date.getFullYear() + 1);
-// Build the set-cookie string:
-cookie_string = "test_cookies=true; path=/; expires=" + expiration_date.toUTCString();
-// Create or update the cookie:
-document.cookie = cookie_string;
-
 
 
 function getData(form) {
@@ -45,9 +36,31 @@ function orderRolls() {
     parent.appendChild(elements);
 }
 
+function updateLocalSave() {
+    const element = document.getElementById("foot");
+    localStorage.setItem("foot", element.innerHTML);
+    const element2 = document.getElementById("body");
+    localStorage.setItem("body", element2.innerHTML);
+    localStorage.setItem("id", id);
+    
+}
+
+function clean() {
+    alert("This is going to reset everything sorry!! not really :D");
+    localStorage.removeItem("foot");
+    localStorage.removeItem("body");
+    localStorage.removeItem("id");
+    window.location.reload();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const charForm = document.getElementById("char");
     const updateForm = document.getElementById("updateInit");
+
+
+    document.getElementById("foot").innerHTML = localStorage.getItem("foot");
+    document.getElementById("body").innerHTML = localStorage.getItem("body");
+    id =  localStorage.getItem("id");
 
     charForm.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -76,8 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
         footer.insertAdjacentHTML('beforeend', footItemHTML);
         const header = document.getElementById('body');
         header.insertAdjacentHTML('beforeend', mainItemHTML);
-        
         id++;
+        updateLocalSave();
     });
 
     updateForm.addEventListener("submit", function (e) {
@@ -89,10 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
             up.setAttribute("roll", roll[1]);
         }
         const lay = document.getElementById("layout");
-        const items = lay.children
-        items.forEach(function(val){
-            
-        });
+        const items = lay.children;
+        for (var item of items) {
+            if (item.firstChild == null) break;
+            var sub = item.children[0].children[0].children[0];
+            sub.value = NaN;
+        }
         console.log(items)
         orderRolls()
     });
@@ -102,5 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const items = document.querySelectorAll(`[id="${ev.target.parentNode.getAttribute('id')}"]`);
         items[0].remove();
         items[1].remove();
+        updateLocalSave();
     });
 });
